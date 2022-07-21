@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Scalable Online Judge -Signup</title>
+        {% load static %}
+        <link rel="stylesheet" type='text/css' href={% static 'judge/signup.css' %}>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-12 col-lg-9 col-xl-7">
+                        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="text-align: center;">Signup</h3>
+                                <form action="{% url 'judge:signup' %}" method="post">
+                                    {% csrf_token %}
+                                    {{ form.non_field_errors }}
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+        
+                                            <div class="form-outline">
+                                                {{ form.first_name.errors }}
+                                                {{ form.first_name }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                {{ form.last_name.errors }}
+                                                {{ form.last_name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 d-flex align-items-center">
+                                            <div class="form-outline datepicker w-100">
+                                                <input type="text" class="form-control form-control-lg" id="birthdayDate" />
+                                                <label for="birthdayDate" class="form-label">Birthday</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <h6 class="mb-2 pb-1">Gender: </h6>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1" checked />
+                                                <label class="form-check-label" for="femaleGender">Female</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2" />
+                                                <label class="form-check-label" for="maleGender">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3" />
+                                                <label class="form-check-label" for="otherGender">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                -->
+        
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            {{ form.username.errors }}
+                                            {{ form.username }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            {{ form.email.errors }}
+                                            {{ form.email }}
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            {{ form.password.errors }}
+                                            {{ form.password }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            {{ form.re_password.errors }}
+                                            {{ form.re_password }}
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!--
+                                <div class="row">
+                                    <div class="col-12">
+                                        <select class="select form-control-lg">
+                                            <option value="1" disabled>Choose option</option>
+                                            <option value="2">Creator - I Create headache for others to solve[Create Contest Only]</option>
+                                            <option value="3">Gamer - Problems are just another level of game I am going to clear[Participate in Contests Only]</option>
+                                            <option value="4">Master - I want em all [Do whatever I want]</option>
+                                        </select>
+                                        <label class="form-label select-label">Choose option</label>
+                                    </div>
+                                </div>
+                                -->
+        
+                                <div class="mt-4 pt-2" style="text-align: center;">
+                                    <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                                </div>
+        
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </body>
+</html>

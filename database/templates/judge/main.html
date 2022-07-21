@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="style.css"/>
+	<title>Scalable Online Judge - Main</title>
+    </head>
+    <body>
+        <div id="index-container">
+	    	<div id="index-left">
+				<h2>Contest List</h2>
+				<br><hr><br>
+				{% if contest_list %}
+				{% for contest in contest_list %}
+				<div id="contest">
+					<a href="/judge/{{ contest.id }}/">{{ contest.contest_name }}</a>
+				</div>
+				{% endfor %}
+				{% else %}
+					<h2>No Contest Available</h2>
+				{% endif %}
+	    	</div>
+	    	<div id="index-right">
+				<div id="User-Profile">
+		    		<h1>User Profile g</h1>
+					<h2>Username to be shown</h2>
+					<h4>Username : {{ username }}</h4>
+				</div>
+				<div id="Leaderboard">
+		   			 <h1>Leaderboard</h1>
+				</div>
+	    	</div>
+		</div>
+    <body>
+</html>

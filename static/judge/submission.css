@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.page{
+	background-color: #616e76;
+	font-family: 'Times New Roman', Times, serif;
+	
+}
+
+.problem-details{
+	width: 35vw;
+	margin: 5vh 1vw 5vh 5vw;
+	background-color: rgb(240,242,245);
+	padding: 2vh;
+	border-radius: 10px;
+}
+
+.problem-name{
+	color: #616e7c;
+	font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans','Helvetica Neue',sans-serif;
+}
+
+.problem-dis{
+	color: #6c6b70;
+	font-size: 15px;
+}
+
+.submission{
+	width: 55vw;
+	margin: 5vh 5vw 5vh 0vw;
+	background-color: rgb(240,242,245);
+	padding: 3vh;
+	border-radius : 10px;
+}
+
+.language{
+	padding-bottom: 2vh;
+	color: #616e7c;
+}
+
+.form-select{
+	width: 75px;
+}
+
+.or{
+	color: #616e76;
+	font-size: 25px;
+	text-align: center;
+}
+
+.input-tc{
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 0px 10px 0px 10px;
+	margin-top: 5px;
+}
+
+.tc-des{
+	background-color: skyblue;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.page{
+	background-color: #616e76;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.problem-section{
+	width: 55vw;
+	margin: 5vh 1vw 5vh 5vw;
+	background-color: rgb(240, 242, 245);
+	padding: 2vh;
+	border-radius: 10px;
+}
+
+.problem-card{
+	height: 5vh;
+	border-radius: 5px;
+	padding: 1vh;
+	background-color: white;
+	text-align: left;
+	margin: 3vh;
+}
+
+.profile-section{
+	width: 30vw;
+	height: 35vh;
+	margin: 5vh 5vw 1vh 1vw;
+	background-color: rgb(240, 242, 245);
+	padding: 2vh;
+	border-radius: 10px;
+}
+
+.leaderboard{
+	height: 55vh;
+	width: 30vw;
+	margin: 1vh 5vw 5vh 1vw;
+	background-color: rgb(240,242,245);
+	padding: 2vh;
+	border-radius: 10px;
+}

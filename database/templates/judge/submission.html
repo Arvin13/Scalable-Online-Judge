@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Scalable Online Judge - Submission</title>
+		{% load static %}
+		<link rel="stylesheet" href={% static 'judge/submission.css' %}>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="problem-submission">
+			<div class="page">
+				<div class="d-flex flex-row justify-content-center">
+					<div class="d-flex flex-column problem-details">
+						<div class="problem-name">
+							<h2>{{problem.Problem_ID}}: {{problem.Problem_name}}</h2>
+						</div>
+						<hr>
+						<div class="problem-dis">
+							<p>{{problem.description}}</p>
+						</div> 
+						<div class="test-case">
+							<h5>Test Case: </h5>
+							{% for tc in test_case_list %}
+							<div class="input-tc">
+								<p class="input-tc-name"> Input {{ forloop.counter }}: </p>
+								<div class="tc-des">
+									<p> {{tc.Input}} </p>
+								</div>
+								<p class="output-tc-name"> Output {{ forloop.counter }}: </p>
+								<div class="tc-des">
+									<p> {{tc.Output}} </p>
+								</div> 
+							</div>
+							{% endfor %}
+						</div>
+
+					</div>
+					<div class="d-flex flex-column submission">
+						<form action="{% url 'judge:result' contest_id problem.id %}" enctype="multipart/form-data" method="post" id="submission-form">
+							{% csrf_token %}
+							<div class="language">
+								<lable for="plang">Language: </lable>
+								<select id="plang" name="plang" class="form-select">
+									<option value="Clang"> Clang </option>
+									<option value="C++"> C++ </option>
+									<option value="Java"> Java </option>
+									<option value="Python"> Python </option>
+								</select>
+							</div>
+							<div style="display: none" id="python-text">
+								<div class="input form-group shadow-textarea tx1" style="border-color: #ba68c8">
+										<textarea class="form-control z-depth-1" id="input-code" name="input-code" rows="15" cols="70" >class Solution:&#13;&#10;	def printstr(self,string):&#13;&#10;		</textarea>
+								</div>
+							</div>
+							<div style="display: block" id="clang-text">
+								<div class="input form-group shadow-textarea tx2" style="border-color: #ba68c8">
+									<textarea class="form-control z-depth-1" id="input-code" name="input-code" rows="15" cols="70" >int printstr(str string){&#13;&#10;	return 0;&#13;&#10;}</textarea>
+								</div>
+							</div>
+							<div style="display: none" id="cpp-text">
+								<div class="input form-group shadow-textarea tx3" style="border-color: #ba68c8">
+									<textarea class="form-control z-depth-1 tx4" id="input-code" name="input-code" rows="15" cols="70" >class Solution{&#13;&#10;public:&#13;&#10;	int printstr(str string){&#13;&#10;		return 0;&#13;&#10;	}&#13;&#10;};</textarea>
+								</div>
+							</div>
+							<div style="display: none" id="java-text">
+								<div class="input form-group shadow-textarea" style="border-color: #ba68c8">
+									<textarea class="form-control z-depth-1" id="input-code" name="input-code" rows="15" cols="70" >class Solution{&#13;&#10;public int printstr(str string){&#13;&#10;		&#13;&#10;	}&#13;&#10;}</textarea>
+								</div>
+							</div>
+							<div class="or">
+								<p> OR </p>
+							</div>
+							<div class="input-group">
+								<div class="custom-file">
+									<input type="file" class="custom-file-input" id="input-file" name="input-file" >
+									<label class="custom-file-label" for="input-file" id="input-file-label">Choose File</label>
+								</div>
+							</div>
+							<br>
+							<div style="text-align: center">
+								<button type="submit" class="btn btn-primary">Submit Your Answer</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		{% load static %}
+		<script src={% static 'judge/submission.js' %}></script>
+	</body>
+</html>
